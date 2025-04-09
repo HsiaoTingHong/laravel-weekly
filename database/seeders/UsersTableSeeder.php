@@ -17,18 +17,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = \Faker\Factory::create();
-
-        // 建立 9 筆一般用戶資料
-        for ($i = 0; $i < 9; $i++) {
-            User::create([
-                'name' => $faker->name,
-                'email' => $faker->unique()->safeEmail,
-                'password' => Hash::make('password'),
-                'is_admin' => false,
-                'age' => $faker->optional()->numberBetween(18, 60),
-            ]);
-        }
+        User::factory(10)->create();
 
         // 建立 1 筆管理員資料
         User::create([
