@@ -20,5 +20,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        // 呼叫 UsersTableSeeder
+        $this->call(UsersTableSeeder::class);
     }
 }
